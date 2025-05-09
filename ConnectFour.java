@@ -162,7 +162,7 @@ public class ConnectFour{
 
 
 
-    public int[][] gameBoard(){
+    public int[][] getGameBoard(){
       int[][] copy = new int[6][7];
       for(int i=0;i<6;i++){
         for(int j=0;j<7;j++){
