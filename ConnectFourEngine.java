@@ -53,6 +53,11 @@ public class ConnectFourEngine {
 
         if (possibleMoves.size() > 0)
         {
+            if (possibleMoves.contains(3)) // drop in center if available (prioritize center)
+            {
+                return 3;
+            }
+
             return possibleMoves.get((int)(Math.random() * possibleMoves.size())); // return random move from possibleMoves
         }
 
@@ -163,7 +168,6 @@ public class ConnectFourEngine {
                 return false;
             }
 
-            System.out.println(col);
             return true;
         }
 
@@ -248,8 +252,6 @@ public class ConnectFourEngine {
         {
             for (int j = 0; j < 7; j++)
             {
-                if (gameBoard[i][j] == player)
-                {
                     if (i - 3 >= 0 && j + 3 < 7)
                     {
                         for (int k = 0; k < 4; k++)
@@ -278,7 +280,6 @@ public class ConnectFourEngine {
                         emptySpaceRow = -1;
                         emptySpaceCol = -1;
                     }
-                }
             }
         }
 
@@ -295,8 +296,6 @@ public class ConnectFourEngine {
         {
             for (int j = 6; j >= 0; j--)
             {
-                if (gameBoard[i][j] == player)
-                {
                     if (i - 3 >= 0 && j - 3 >= 0)
                     {
                         for (int k = 0; k < 4; k++)
@@ -325,7 +324,6 @@ public class ConnectFourEngine {
                         emptySpaceRow = -1;
                         emptySpaceCol = -1;
                     }
-                }
             }
         }
 
@@ -397,8 +395,6 @@ public class ConnectFourEngine {
         {
             for (int j = 0; j < 7; j++)
             {
-                if (gameBoard[i][j] == player)
-                {
                     if (i - 4 >= 0 && j + 4 < 7)
                     {
                         for (int k = 0; k < 5; k++)
@@ -440,7 +436,6 @@ public class ConnectFourEngine {
                         emptySpace3Row = -1;
                         emptySpace3Col = -1;
                     }
-                }
             }
         }
 
@@ -461,8 +456,6 @@ public class ConnectFourEngine {
         {
             for (int j = 6; j >= 0; j--)
             {
-                if (gameBoard[i][j] == player)
-                {
                     if (i - 3 >= 0 && j - 3 >= 0)
                     {
                         for (int k = 0; k < 4; k++)
@@ -504,7 +497,6 @@ public class ConnectFourEngine {
                         emptySpace3Row = -1;
                         emptySpace3Col = -1;
                     }
-                }
             }
         }
 
